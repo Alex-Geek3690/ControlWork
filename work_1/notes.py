@@ -63,9 +63,10 @@ def change_note():
             save_notes()
             print('Заметка изменена!')
             break
-        else:
-            print('Заметка не найдена!')
+    else:
+        print('Заметка не найдена!')
 
+add_note()
 
 while True:
     print(menu())
