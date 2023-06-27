@@ -66,7 +66,18 @@ def change_note():
     else:
         print('Заметка не найдена!')
 
-add_note()
+def delete_note():
+    id_note = int(input('Введите id заметки, которую необходимо удалить: '))
+    for note in notes:
+        if note['id'] == id_note:
+            notes.remove(note)
+            save_notes()
+            print('Заметка удалена!')
+            break
+    else:
+        print('Заметка не найдена!')
+
+open_notes()
 
 while True:
     print(menu())
@@ -79,7 +90,9 @@ while True:
         case 3:
             change_note()
         case 4:
-            pass
+            delete_note()
         case 5:
             break
+        
+
 
