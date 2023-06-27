@@ -66,6 +66,7 @@ def change_note():
         else:
             print('Заметка не найдена!')
 
+
 while True:
     print(menu())
     choice = int(input('Выберите пункт меню: '))
