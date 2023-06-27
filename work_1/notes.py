@@ -52,6 +52,20 @@ def open_list_notes():
     if not notes:
         print('Нет заметок!')
 
+def change_note():
+    id_note = int(input('Введите id заметки, которую необходимо изменить: '))
+    for note in notes:
+        if note['id'] == id_note:
+            note['title'] = input('Введите заголовок: ')
+            note['body'] = input('Введите текст: ')
+            note['updated_at'] = datetime.now().strftime('%d.%m.%Y %H:%M:%S')
+            save_notes()
+            print('Заметка изменена!')
+            break
+        else:
+            print('Заметка не найдена!')
+
+
 while True:
     print(menu())
     choice = int(input('Выберите пункт меню: '))
@@ -61,7 +75,7 @@ while True:
         case 2:
             add_note()
         case 3:
-            pass
+            change_note()
         case 4:
             pass
         case 5:
