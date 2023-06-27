@@ -42,17 +42,16 @@ def add_note():
             'added_at': added_at, 'updated_at': added_at}
     notes.append(note)
     
+    notes.sort(key= lambda x: x['id'])
 
-save_notes()
-print('Заметка сохранена!')
+    save_notes()
+    print('Заметка сохранена!')
 
 def open_list_notes():
     for note in notes:
         print(f"id: {note['id']}, Заголовок: {note['title']}, Тело заметки: {note['body']}, Создана в: {note['added_at']}, Обновлена в: {note['updated_at']}")
     if not notes:
         print('Нет заметок!')
-
-
 
 
 while True:
